@@ -56,6 +56,7 @@ app.get("/player/:tag/battles", async (req, res) => {
     }
 });
 
+
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en puerto ${PORT}`);
+  console.log("Servidor corriendo en puerto " + PORT);
 });
