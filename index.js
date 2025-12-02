@@ -56,6 +56,16 @@ app.get("/player/:tag/battles", async (req, res) => {
     }
 });
 
+app.get("/myip", async (req, res) => {
+  try {
+    const r = await fetch("https://api.ipify.org?format=json");
+    const j = await r.json();
+    res.json(j);
+  } catch (e) {
+    res.status(500).json({ error: "Error obteniendo IP" });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log("Servidor corriendo en puerto " + PORT);
